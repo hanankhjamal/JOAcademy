@@ -1,28 +1,41 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <v-app style="direction: rtl;font-family: 'NotoKufiArabic', sans-serif !important">
+    <Header />
+
+    <v-content>
+      <NavigationDrawer />
+      <Container />
+    </v-content>
+    <Footer />
+  </v-app>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from "./components/HelloWorld";
+import NavigationDrawer from "./components/NavigationDrawer";
+import Header from "./components/Header";
+import Container from "./components/Container";
+import Footer from "./components/Footer";
 
 export default {
-  name: 'app',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    Header,
+    NavigationDrawer,
+    Container,
+    Footer
+  },
+  data: () => ({
+    //
+  })
+};
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<style scoped>
+@font-face {
+  font-family: "NotoKufiArabic";
+  src: url(//fonts.gstatic.com/ea/notokufiarabic/v2/NotoKufiArabic-Regular.woff2);
+  font-weight: normal;
+  font-style: normal;
 }
 </style>
